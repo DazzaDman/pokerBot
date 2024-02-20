@@ -1,7 +1,7 @@
 from Card import Card
 
 
-def take_input():
+def starting_hand_input():
 
     while True:
         card1_input = input("Please enter your first starting card: ")
@@ -21,6 +21,9 @@ def take_input():
         else:
             print("Invalid input, please try again.")
 
+def flop_input():
+    print("fart")
+
 
 def validate_input(card):
     card_rank = card[0]
@@ -35,8 +38,10 @@ def validate_input(card):
 
 
 def run_game():
-    print("poker calculator version 1 billion")
+    print("         poker calculator")
     print("----------------------------------")
+    starting_hand_input()
+    print()
 
 run_game()
-# take_input()
+
