@@ -67,6 +67,7 @@ def validate_input(card, hand):
             return False
         for hand_card in hand.player_hand:
             if card[0] == hand_card.rank and card[1] == hand_card.suit:
+                print("This card already exists in this hand")
                 return False
 
         return True  # Only reached if rank, suit, uniqueness are all valid
