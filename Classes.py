@@ -3,9 +3,9 @@ class Card:
     RANK = ('2', '3', '4', '5', '6', '7', '8', '9', 't', 'j', 'q', 'k', 'a')
 
     def __init__(self, rank, suit):
-        if rank not in self.RANK:
+        if rank.lower() not in self.RANK:
             raise ValueError("Invalid rank")
-        if suit not in self.SUIT:
+        if suit.lower() not in self.SUIT:
             raise ValueError("Invalid suit")
         self.rank = rank
         self.suit = suit
@@ -46,6 +46,21 @@ class HandEvaluator:
 
     def is_royal_flush(hand):
         print('printing ranks')
+        user_ranks = []
+        for card in hand:
+            user_ranks.append(card[0])
+            print('appending card')
+        print(sorted(user_ranks))
+        required_ranks = ['a', 'k', 'q', 'j', 't']
+        print(sorted(required_ranks))
 
+        if sorted(user_ranks) == sorted(required_ranks):
+            print('ranks match, checking for suits')
+            for card in hand[1:]:  # for every card except the first one
+                if card[1] != hand[0][1]:  # if the suit of the card is not equal to the first card's suit
+                    return False
 
-
+            return True
+        else:
+            print("royal flush not found")
+            return False

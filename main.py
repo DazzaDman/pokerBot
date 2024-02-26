@@ -81,7 +81,7 @@ def run_game():
     card_hand = Hand()
     hand_evaluator = HandEvaluator()
     print("         poker calculator")
-    print("----------------------------------")
+    print("----------------------------------\n Enter all cards in lowercase, two character format, e.g ac, kc, th")
     starting_hand_input(card_hand)
     print(card_hand)
     flop_input(card_hand)
